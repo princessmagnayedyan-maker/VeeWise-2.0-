@@ -1561,3 +1561,43 @@ function clearMessage() {
 
 })();
 
+// STAR RATING FUNCTIONALITY
+
+const stars = document.querySelectorAll("#starRating .star");
+const submitRating = document.getElementById("submitRating");
+const ratingText = document.getElementById("ratingText");
+const ratingMessage = document.getElementById("ratingMessage");
+
+let selectedRating = 0;
+
+// Select a star
+stars.forEach((star) => {
+    star.addEventListener("click", function () {
+        selectedRating = Number(this.dataset.value);
+
+        stars.forEach((item) => {
+            const value = Number(item.dataset.value);
+
+            item.classList.toggle(
+                "active",
+                value <= selectedRating
+            );
+        });
+
+        ratingText.textContent =
+            `You selected ${selectedRating} out of 5 stars.`;
+
+        submitRating.disabled = false;
+        ratingMessage.textContent = "";
+    });
+});
+
+// Submit rating
+submitRating.addEventListener("click", function () {
+    if (selectedRating === 0) return;
+
+    ratingMessage.textContent =
+        `Thank you for rating VeeWise ${selectedRating} out of 5 stars!`;
+
+    submitRating.disabled = true;
+});
