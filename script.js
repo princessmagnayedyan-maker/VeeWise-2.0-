@@ -1256,32 +1256,62 @@ function checkMessage() {
 
     }
 
-    let warningSigns = {
+  let warningSigns = {
 
-        "Urgent or threatening language": [
-            "urgent", "immediately", "act now",
-            "suspended", "blocked", "last chance",
-            "within 10 minutes", "within 24 hours"
-        ],
+    "Urgent or threatening language": [
+        "urgent", "immediately", "act now",
+        "suspended", "blocked", "last chance",
+        "within 10 minutes", "within 24 hours",
+        "bayad muna", "kailangan ngayon",
+        "asikasuhin agad", "huling pagkakataon",
+        "mawawala ang account mo", "ma-block ang account",
+        "mag-expire na", "hanggang ngayon na lang",
+        "bilisan mo", "huwag magpatumpik-tumpik",
+        "kailangan agad", "last day na",
+        "mawawala ang iyong access"
+    ],
 
-        "Requests for sensitive information": [
-            "password", "otp", "verification code",
-            "one-time pin", "bank details", "card number"
-        ],
+    "Requests for sensitive information": [
+        "password", "otp", "verification code",
+        "one-time pin", "bank details", "card number",
+        "ibigay ang otp", "send mo ang otp",
+        "pakibigay ang password", "account details",
+        "personal information", "birthday at address",
+        "send your pin", "ilagay ang iyong otp",
+        "i-confirm ang password", "bank account number",
+        "atm details", "login credentials",
+        "verification number", "security code"
+    ],
 
-        "Suspicious payment requests": [
-            "processing fee", "redelivery fee",
-            "send money", "pay now", "transfer money"
-        ],
+    "Suspicious payment requests": [
+        "processing fee", "redelivery fee",
+        "send money", "pay now", "transfer money",
+        "magbayad muna", "padala ka muna",
+        "mag-send ng pera", "down payment muna",
+        "bayad bago makuha", "may bayad na fee",
+        "registration fee", "advance payment",
+        "delivery fee muna", "mag-deposit ka muna",
+        "send payment", "bayaran ang processing fee",
+        "magbayad para ma-claim", "cash in muna",
+        "gcash payment", "bank transfer muna"
+    ],
 
-        "Unexpected link instructions": [
-            "click here", "verify your account",
-            "claim now", "open this link"
-        ]
+    "Unexpected link instructions": [
+        "click here", "verify your account",
+        "claim now", "open this link",
+        "nanalo ka", "claim ang premyo",
+        "i-click ang link", "pindutin ang link",
+        "buksan ang link", "mag-login dito",
+        "i-verify ang account", "claim mo na",
+        "kunin ang iyong reward", "register here",
+        "check this website", "visit this link",
+        "i-confirm ang account", "claim your reward",
+        "i-click para makuha", "mag-register ngayon"
+    ]
 
-    };
+};
 
-    let detected = [];
+let detected = [];
 
     for (let category in warningSigns) {
 
